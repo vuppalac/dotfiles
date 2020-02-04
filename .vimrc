@@ -41,13 +41,11 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'jiangmiao/auto-pairs'
 Plug 'majutsushi/tagbar'
 Plug 'Yggdroot/indentLine'
-Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'pboettch/vim-cmake-syntax'
-"Plug 'valloric/youcompleteme', {'do': './install.py --clang-completer'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mhinz/vim-startify'
-Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 else
@@ -67,11 +65,9 @@ endif
 
 Plug 'honza/vim-snippets'
 
-"Plug 'tpope/vim-dispatch'
-
 "" Color
-Plug 'dracula/vim'
-"Plug 'joshdick/onedark.vim'
+"Plug 'dracula/vim'
+Plug 'joshdick/onedark.vim'
 
 "*****************************************************************************
 "" Custom bundles
@@ -152,12 +148,10 @@ set colorcolumn=80
 set cursorline
 
 let no_buffers_menu=1
-if !exists('g:not_finish_vimplug')
-  let g:dracula_italic = 0
-  set termguicolors
-  color dracula
-  "colorscheme onedark
-endif
+let g:dracula_italic = 0
+set termguicolors
+silent! colorscheme dracula
+silent! colorscheme onedark
 
 set mousemodel=popup
 set t_Co=256
@@ -222,7 +216,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'dracula'
+let g:airline_theme = 'onedark'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -478,18 +472,6 @@ endif
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
-
-" youcompleteme
-"let g:ycm_error_symbol='✘'
-"let g:ycm_error_symbol='☠'
-let g:ycm_error_symbol='╳'
-let g:ycm_warning_symbol='❢'
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_filepath_completion_use_working_dir = 1
-let g:ycm_always_populate_location_list = 1
-set completeopt-=preview
-let g:ycm_cache_omnifunc = 0
 
 let g:startify_change_to_dir = 0
 
