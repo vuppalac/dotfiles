@@ -294,6 +294,3 @@ tmux_conf_copy_to_os_clipboard=false
 
 # move status line to top
 #set -g status-position top
-
-#set -g default-terminal "xterm-256color" # colors!
-set -g terminal-overrides ",xterm-256color:Tc"
